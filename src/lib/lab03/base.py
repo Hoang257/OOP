@@ -16,3 +16,6 @@ class Athlete(Lab01Athlete):
 
     def display(self):
         print(self)
+
+    def score(self) -> float:
+        return float(self.training_load())
