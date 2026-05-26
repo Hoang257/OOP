@@ -116,27 +116,3 @@ python main.py
 - при необходимости — описание
 
 В консоли появится ссылка вида `https://asciinema.org/a/1234567` — число `1234567` это **id** записи.
-
-Локальный файл без загрузки: `asciinema upload lab07.cast`
-
-#### 5. Ссылка в README
-
-Замените `xxxxxxx` на свой id и вставьте в этот раздел:
-
-[![asciinema](https://asciinema.org/a/xxxxxxx.svg)](https://asciinema.org/a/xxxxxxx)
-
-**Пример** (подставьте свой id):
-
-```markdown
-[![asciinema](https://asciinema.org/a/1234567.svg)](https://asciinema.org/a/1234567)
-```
-
-#### 6. Проверка
-
-- Ссылка открывается в браузере без входа.
-- В записи видны все 4 сценария, кириллица читается (если каша — перезапишите после `chcp 65001`).
-- Длительность обычно **3–7 минут** — не слишком коротко и не «пустой» скролл.
-
-### Если asciinema не ставится
-
-Запись через веб: [Getting started](https://docs.asciinema.org/getting-started/) — или установите [asciinema CLI в WSL](https://docs.asciinema.org/manual/cli/installation/) и запускайте `python main.py` из Linux-пути к проекту.
