@@ -1,0 +1,8 @@
+{
+  "python.terminal.activateEnvironment": false,
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "files.encoding": "utf8",
+  "python.analysis.extraPaths": ["${workspaceFolder}"]
+}

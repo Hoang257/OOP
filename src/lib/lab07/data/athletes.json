@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "kind": "athlete",
+      "id": 9,
+      "name": "Хоанг",
+      "age": 18,
+      "weight": 63.0,
+      "height": 175.0,
+      "status": true,
+      "num_visiting": 15,
+      "paid": true,
+      "added_at": "2026-05-26T13:54:56"
+    }
+  ]
+}

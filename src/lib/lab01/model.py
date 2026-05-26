@@ -23,9 +23,9 @@ except ImportError:
         validate_paid,
     )
 class Athlete:
-    min_age = 16
+    min_age: int = 16
 
-    def __init__(self, id: int, name: str, age: int, weight: float, height: float, status: bool, num_visiting: int, paid: bool):
+    def __init__(self, id: int, name: str, age: int, weight: float, height: float, status: bool, num_visiting: int, paid: bool) -> None:
         validate_id(id)
         validate_name(name)
         validate_age(age, self.min_age)
@@ -45,75 +45,75 @@ class Athlete:
         self._paid = paid
 
     @property
-    def id(self):
+    def id(self) -> int:
         return self._id
     
     @property
-    def name(self):
+    def name(self) -> str:
         return self._name
     
     @property
-    def age(self):
+    def age(self) -> int:
         return self._age
     
     @age.setter
-    def age(self, new_age):
+    def age(self, new_age: int) -> None:
         validate_age(new_age, self.min_age)
         self._age = new_age
 
     @property 
-    def weight(self):
+    def weight(self) -> float:
         return self._weight
     
     @weight.setter
-    def weight(self, new_weight):
+    def weight(self, new_weight: float) -> None:
         validate_weight(new_weight)
         self._weight = new_weight
     
     @property 
-    def height(self):
+    def height(self) -> float:
         return self._height
     
     @property 
-    def status(self):
+    def status(self) -> bool:
         return self._status
     
     @height.setter
-    def height(self, new_height):
+    def height(self, new_height: float) -> None:
         validate_height(new_height)
         self._height = new_height
     
     @property
-    def num_visiting(self):
+    def num_visiting(self) -> int:
         return self._num_visiting
     
     @num_visiting.setter
-    def num_visiting(self, new_num_visiting):
+    def num_visiting(self, new_num_visiting: int) -> None:
         validate_num_visiting(new_num_visiting)
         self._num_visiting = new_num_visiting
     
     @property
-    def payment(self):
+    def payment(self) -> bool:
         return self._paid
     
     @payment.setter
-    def payment(self, value):
+    def payment(self, value: bool) -> None:
         validate_paid(value)
         self._paid = value
 
 
 # Changing the state
 
-    def active(self):
+    def active(self) -> None:
         self._status = True
     
-    def deactive(self):
+    def deactive(self) -> None:
         self._status = False
     
-    def pay(self):
+    def pay(self) -> None:
         self._paid = True
 
-    def not_pay(self):
+    def not_pay(self) -> None:
         self._paid = False
     
 # Business methods
@@ -125,7 +125,7 @@ class Athlete:
 # весовая категория (легкая, средняя, тяжелая)
 
 
-    def train(self, times=1):
+    def train(self, times: int=1) -> None:
         if not self._status:
             raise ValueError("Нельзя тренироваться: спортсмен неактивен.")
         if not self._paid:
@@ -138,11 +138,11 @@ class Athlete:
         self._paid = False
         print(f"{self.name} сегодня провел тренировку.Всего тренировок {self._num_visiting}")
     
-    def bmi(self):
+    def bmi(self) -> float:
         height = self._height / 100
         return round(self._weight / (height ** 2), 2)
     
-    def weight_category(self):
+    def weight_category(self) -> str:
         if self._weight < 65:
             return "Lightweight"
         elif self._weight < 85:
@@ -150,7 +150,7 @@ class Athlete:
         else:
             return "Heavyweight"
     
-    def can_compete_with(self, other):
+    def can_compete_with(self, other: object) -> bool:
 
         if not isinstance(other, Athlete):
             return False
@@ -163,20 +163,20 @@ class Athlete:
         
         return True
 
-    def __str__(self):
+    def __str__(self) -> str:
         status = "active" if self._status else "inactive"
         paid = "paid" if self._paid else "not paid"
         return (f"Athlete {self._name} (ID:{self._id}): age {self._age}, "
                 f"weight {self._weight}kg, height {self._height}cm, "
                 f"visits {self._num_visiting} ({status}, {paid})")
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return (f"Athlete(id={self._id}, name='{self._name}', age={self._age}, "
                 f"weight={self._weight}, height={self._height}, "
                 f"status={self._status}, num_visiting={self._num_visiting}, "
                 f"paid={self._paid})")
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         if not isinstance(other, Athlete):
             return False
         return self._id == other._id

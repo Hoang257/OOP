@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ЛР-7: консольное приложение",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/lib/lab07/main.py",
+      "cwd": "${workspaceFolder}/src/lib/lab07",
+      "console": "integratedTerminal",
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      },
+      "justMyCode": true
+    }
+  ]
+}
