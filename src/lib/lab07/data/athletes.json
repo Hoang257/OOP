@@ -2,16 +2,44 @@
   "version": 1,
   "records": [
     {
+      "kind": "runner",
+      "id": 3,
+      "name": "Даша",
+      "age": 20,
+      "weight": 100.0,
+      "height": 200.0,
+      "status": true,
+      "num_visiting": 10,
+      "paid": true,
+      "added_at": "2026-06-01T14:35:32",
+      "distance": 100,
+      "best_time": 9.0
+    },
+    {
       "kind": "athlete",
-      "id": 9,
+      "id": 2,
+      "name": "Егор",
+      "age": 18,
+      "weight": 84.0,
+      "height": 190.0,
+      "status": true,
+      "num_visiting": 4,
+      "paid": true,
+      "added_at": "2026-06-01T14:34:38"
+    },
+    {
+      "kind": "runner",
+      "id": 1,
       "name": "Хоанг",
       "age": 18,
-      "weight": 63.0,
+      "weight": 65.0,
       "height": 175.0,
       "status": true,
-      "num_visiting": 15,
+      "num_visiting": 5,
       "paid": true,
-      "added_at": "2026-05-26T13:54:56"
+      "added_at": "2026-05-26T15:17:15",
+      "distance": 15,
+      "best_time": 10.0
     }
   ]
 }
